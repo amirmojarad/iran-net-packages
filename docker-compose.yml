@@ -9,6 +9,16 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: irnetpackagesPassword#1536
       POSTGRES_DB: iran-net-packages_db
+  test_db:
+    image: postgres
+    container_name: iran-net-packages_test-db
+    ports:
+      - "9010:9010"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: irnetpackagesPassword#1536
+      POSTGRES_DB: iran-net-packages_test-db
+
   app:
     build: .
     container_name: iran-net-package

@@ -13,6 +13,25 @@ type Config struct {
 		Rightell   string `json:"Rightell"`
 		HamrahAval string `json:"HamrahAval"`
 	}
+	Databases struct {
+		Postgres struct {
+			Host     string `json:"Host"`
+			User     string `json:"User"`
+			Password string `json:"Password"`
+			Name     string `json:"Name"`
+			Port     int    `json:"Port"`
+			TimeZone string `json:"TimeZone"`
+		}
+
+		Test struct {
+			Host     string `json:"Host"`
+			User     string `json:"User"`
+			Password string `json:"Password"`
+			Name     string `json:"Name"`
+			Port     int    `json:"Port"`
+			TimeZone string `json:"TimeZone"`
+		}
+	}
 }
 
 var lock = &sync.Mutex{}

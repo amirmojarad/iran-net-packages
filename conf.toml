@@ -10,3 +10,10 @@ Password = "irnetpackagesPassword#1536"
 Name = "iran-net-packages_db"
 port = 5432
 TimeZone="Asia/Tehran"
+[Databases.Test]
+Host = "localhost"
+User = "user"
+Password = "irnetpackagesPassword#1536"
+Name = "iran-net-packages_test-db"
+port = 9010
+TimeZone="Asia/Tehran"
