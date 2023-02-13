@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    container_name: iran-net-packages_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: irnetpackagesPassword#1536
+      POSTGRES_DB: iran-net-packages_db
+  app:
+    build: .
+    container_name: iran-net-package
+    ports:
+      - "3000:3000"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: irnetpackagesPassword#1536
+      POSTGRES_DB: iran-net-packages_db
+      POSTGRES_HOST: localhost
+    depends_on:
+      - db
