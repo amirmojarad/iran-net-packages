@@ -26,3 +26,15 @@ func (npRepository *NetPackageRepository) GetNetPackage(ctx context.Context, npI
 	}
 	return netPackage, nil
 }
+
+func (npRepository *NetPackageRepository) DeleteNetPackage(ctx context.Context, npID uint) error {
+	result := npRepository.Delete(&domain.NetPackage{
+		Model: gorm.Model{
+			ID: npID,
+		},
+	})
+	if result.Error != nil {
+		return result.Error
+	}
+	return nil
+}

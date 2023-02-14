@@ -22,4 +22,5 @@ type ProviderUseCase interface {
 type ProviderRepository interface {
 	CreateProvider(ctx context.Context, provider *Provider) (*Provider, error)
 	GetProvider(ctx context.Context, providerID int) (*Provider, error)
+	DeleteProvider(ctx context.Context, providerID uint) error
 }

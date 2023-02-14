@@ -25,3 +25,15 @@ func (pr *ProviderRepository) GetProvider(ctx context.Context, providerID int) (
 	}
 	return provider, nil
 }
+
+func (pr *ProviderRepository) DeleteProvider(ctx context.Context, providerID uint) error {
+	result := pr.Delete(&domain.Provider{
+		Model: gorm.Model{
+			ID: providerID,
+		},
+	})
+	if result.Error != nil {
+		return result.Error
+	}
+	return nil
+}

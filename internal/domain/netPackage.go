@@ -23,4 +23,5 @@ type NetPackageUseCase interface {
 type NetPackageRepository interface {
 	CreateNetPackage(ctx context.Context, netPackage *NetPackage) (*NetPackage, error)
 	GetNetPackage(ctx context.Context, npID int) (*NetPackage, error)
+	DeleteNetPackage(ctx context.Context, npID uint) error
 }
